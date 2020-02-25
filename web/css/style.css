@@ -1,0 +1,822 @@
+/*
+https://github.com/LIT-IDM/deliverable-3-html-css-static-site-template-group-2.git
+yellow: #ffeb02
+linkYellow: #f2cd37
+grey: #625d68
+*/
+
+@font-face{
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+}
+
+@font-face{
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/Roboto Condensed/RobotoCondensed-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Roboto Regular';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Montserrat';
+}
+
+p{
+    font-family: 'Roboto Regular';
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+a, li{
+    font-family: 'Roboto Regular';
+    font-size: 1.3em;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: auto;
+    margin-top: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+footer{
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    margin-top: -16px;
+}
+
+.container > .shows{
+    grid-column: 3 / -3;
+    
+}
+
+.shows a{
+    color: black;
+}
+
+input{
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.checked {
+  color: orange;
+}
+
+.logo{
+    height: 80%;
+}
+
+
+/*  =================================================================
+    ========================  RATING SYSTEM  ========================
+    ================================================================= */
+
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+ 
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+ 
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}
+
+
+/*  =================================================================
+    =======================  STUDENT PROFILE  =======================
+    ================================================================= */
+
+.profile, .recent_projects{
+    text-align: center;
+    box-shadow: 0px 0px 5px grey;
+    margin-bottom: 40px;
+}
+
+.profile{
+    display: inherit;
+    grid-column: 3 / 7;
+    grid-row: 1 / 2;
+    border-style: solid black 1px;
+    background-color: black;
+}
+
+.profile > .profile_image{
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 5px solid #ffeb02;
+    
+}
+
+.profile > .course{
+    color: #625d68;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.profile_description, .profile_headings{
+    color: white;
+    margin: 0;
+}
+
+.profile > p{
+    color: white;
+}
+
+.profile > .details{
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.profile > .name{
+    margin: 0;
+    color: #ffeb02;
+    font-size: 2.2em;
+    text-decoration: underline;
+}
+
+.profile a{
+    color: #f2cd37;
+}
+
+.profile a:hover{
+    color: orange;
+}
+
+.change_details{
+    margin: 0;
+}
+
+.profiles{
+    grid-column: 3 / -3;
+}
+
+.profiles > .profiles_link{
+    width: 24%;
+}
+
+/*--------- RECENT PROJECTS -----------*/
+
+.recent_projects{
+    display: inherit;
+    grid-column: 7 / 11;
+    grid-row: 1 / 2;
+    border-style: solid 1PX BLACK;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.recent_projects a{
+    color: black;
+    margin-bottom: 30px;
+}
+
+.recent_projects h1{
+    color: #625d68;
+    text-decoration: underline;
+}
+
+.thumbnail{
+    width: 100%;
+    margin: auto;
+    box-shadow: 0px 0px 5px #625d68;
+}
+
+.thumbnail:hover{
+    box-shadow: 0px 0px 7px black;
+}
+
+.thumbnail:active{
+    box-shadow: 0px 0px 12px black;
+}
+
+.thumbnail > img{
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail > .project_name{
+    color: #625d68;
+}
+
+.thumbnail > .project_description{
+    padding-bottom: 15px;
+}
+
+
+
+/*  =================================================================
+    =====================  HEADER + NAVIGATION  =====================
+    ================================================================= */
+
+header{
+    background-color: black;
+    height: 70px;
+    margin: 0;
+    
+}
+
+nav{
+    height: 100%;
+    z-index: 999;
+}
+
+nav div{
+    color: yellow;
+    font-size: 2em;
+    padding: 14px;
+    display: none;
+}
+
+header nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    height: 100%;
+    margin: 0;
+    z-index: 999;
+}
+
+header nav ul li{
+    margin-right: 20px;
+    width: 100px;
+    display: block;
+    line-height: 100px;
+    color: #ffeb02;
+    font-size: 1.3em;
+    line-height: 3.4em;
+    text-align: center;
+    z-index: 999;
+}
+
+header nav ul li:hover{
+    background-color: #ffeb02;
+    color: black;
+    z-index: 999;
+}
+
+nav ul li a{
+    display: block;
+    height: 100%;
+    text-align: center;
+    font-size: 1em;
+    z-index: 999;
+    color: #ffeb02;
+}
+
+nav ul li a:hover{
+    color: black;
+    background-color: #ffeb02;
+}
+
+nav ul li a img{
+   height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    vertical-align: bottom;
+}
+
+/*----------- DROPDOWNS --------------*/
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+}
+
+nav ul li ul li{
+    display: block;
+    width: 200px;
+    z-index: 999;
+}
+
+nav ul li ul li a{
+    background-color: #625d68;
+    display: block;
+    color: #ffeb02;
+    width: 100%;
+    font-size: .8em;
+    z-index: 999;
+}
+
+nav ul li ul li a:hover{
+    background-color: #ffeb02;
+    color: black;
+}
+
+
+/*  =================================================================
+    =========================  MY PROJECTS  =========================
+    ================================================================= */
+
+.container > .projects{
+    grid-column: 3 / -3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects a{
+    width: 48%;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #625d68;
+}
+
+.projects .myProjects_thumbnail{
+    width: 100%;
+    display: inline-block;
+    box-shadow: 0px 0px 5px #625d68;
+    text-align: center;
+}
+
+.projects .myProjects_thumbnail:hover{
+    box-shadow: 0px 0px 7px black;
+}
+
+.projects .myProjects_thumbnail:active{
+    box-shadow: 0px 0px 12px black;
+}
+
+.projects h1{
+    margin: 10px;
+}
+
+.projects p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.myProjects_thumbnail > img{
+    width: 100%;
+    height: auto;
+}
+
+/*  =================================================================
+    ======================  PROJECT DRILLDOWN  ======================
+    ================================================================= */
+
+.project_drilldown{
+    grid-column: 3 / -3;
+    text-align: center;
+    box-shadow: 0px 0px 5px #625d68;
+    margin-bottom: 20px;
+}
+
+.project_drilldown img{
+    width: 100%;
+}
+
+.project_drilldown h1{
+    color: #625d68;
+}
+
+.comments{
+    grid-column: 3 / -3;
+}
+
+.comments .comment{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 3px #625d68;
+}
+
+.comments .comment .date{
+    margin: 0;
+    margin-left: 20px;
+}
+
+.comments .comment h2{
+    margin: 10px 10px 10px 10px;
+}
+
+.comments .comment p{
+    margin: 0;
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
+.edit_project{
+    background-color: #625d68;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 20%;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.edit_project:hover{
+    background-color: black;
+}
+
+
+/*  =================================================================
+    ======================  LOGIN & REGISTER  =======================
+    ================================================================= */
+
+.form_container{
+    grid-column: 5 / -5;
+    border: 3px solid #ffeb02;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.8);
+    margin-top: 150px;
+    margin-bottom: 200px;
+}
+
+.form_container > .login{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.form_title{
+    position: relative;
+    bottom: 30px;
+    background-color: #ffeb02;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    width: 70%;
+    margin: auto;
+}
+
+.form_title > h1{
+    color: #625d68;
+}
+
+.login img{
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.login input{
+    margin-bottom: 20px;
+    width: 80%;
+    height: 40px;
+    background-color: #625d68;
+    border: 2px solid #ffeb02;
+    border-radius: 0px 10px 10px 0px;
+    color: white;
+}
+
+.input_wrapper{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.checkbox_wrapper input[type="checkbox"]{
+    width: 12px;
+    height: 12px;
+}
+
+.checkbox_wrapper{
+    margin-top: -10px;
+    width: 40%;
+}
+
+.checkbox_label{
+    color: #ffeb02;
+}
+
+
+.input_wrapper img{
+    vertical-align: top;
+    width: 46px;
+    margin: 0;
+    border-radius: 10px 0px 0px 10px;
+    margin-bottom: 1px;
+}
+
+.input_wrapper input{
+    margin: 0;
+}
+
+.login button{
+    width: 90%;
+    height: 50px;
+    background-color: #ffeb02;
+    color: #625d68;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+}
+
+.login p{
+    color: white;
+}
+
+.login p a{
+    color: #f2cd37;
+}
+
+#login_container{
+    background: url('../assets/img/bubbles.png') no-repeat center center fixed;
+    background-size: cover;
+    margin-top: 0;
+}
+
+.container > .project_form_container{
+    grid-column: 3 / -3;
+    margin-top: 40px;
+    box-shadow: 0px 0px 5px #625d68;
+}
+
+.project_form_container > form{
+    width: 100%;
+    height: 800px;
+}
+
+.project_input_wrapper{
+    width: 90%;
+    height: 100px;
+    margin: auto;
+}
+
+.project_input_wrapper input{
+    width: 100%;
+    height: 40px;
+}
+
+textArea#project_body{
+    width: 100%;
+}
+
+#create_project_title{
+    width: 40%;
+}
+
+#create_project_title h1{
+    text-align: center;
+}
+
+#text_area_project_body{
+    height: 200px;
+}
+
+textArea#description{
+    width: 100%;
+}
+
+input[type="submit"]{
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+
+.container > .show_form_container{
+    grid-column: 3 / -3;
+    margin-top: 40px;
+    box-shadow: 0px 0px 5px #625d68;
+}
+
+.show_form_container > form{
+    width: 100%;
+    height: 800px;
+}
+
+.show_input_wrapper{
+    width: 90%;
+    height: 100px;
+    margin: auto;
+}
+
+.show_input_wrapper input{
+    width: 100%;
+    height: 40px;
+}
+
+
+.container > .show_container{
+    grid-column: 3 / -3;
+}
+
+/*  =================================================================
+    =======================  GALLERY  ===============================
+    ================================================================= */
+
+.project_image{
+    width: 100%;
+    height: auto;
+}
+
+.show_container{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#container_overflow{
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+}
+
+.show_project_link{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.show_container > .project_preview{
+    width: 100%;
+    
+}
+
+.thumbnail > .image_wrapper{
+    width: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.admin_show{
+    width: 100%;
+}
+
+/*  =================================================================
+    ===========================  MOBILE  ============================
+    ================================================================= */
+
+@media(max-width: 768px){
+    
+    /*--------- NAVIGATION -----------*/
+    nav div{
+        display: block;
+        z-index: 100;
+    }
+    
+    nav ul.active{
+        display: block;
+    }
+    
+    nav ul.active li{
+        display: block;
+    }
+    
+    nav ul.active li a img.logo{
+        display: none;
+    }
+    
+    nav ul.active li a{
+        display: block;
+    }
+    
+    header{
+        z-index: 100;
+        
+    }
+    
+    header nav{
+        z-index: 100;
+    }
+    
+    header nav ul{
+        display: none;
+        margin: 0;
+        position: absolute;
+        height: 80px;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 0;
+        z-index: 100;
+    }
+    
+    header nav ul li{
+        background-color: black;
+        display: block;
+        margin: 0;
+        z-index: 100;
+        width: 100%;
+    }
+    
+    .main_menu li a{
+        display: block;
+        box-sizing: border-box;
+        margin: 0;
+        z-index: 1;
+        
+    }
+    
+    .sub_menu li a{
+        box-sizing: border-box;
+        width: 100%;
+        
+        background-color: #625d68;
+    }
+    
+    /*---------- MY PROJECTS -----------*/
+    
+    .container .projects{
+        grid-column: 1 / -1;
+    }
+    
+    .projects a{
+        width: 100%;
+        z-index: -1;
+    }
+    
+    .projects .myProjects_thumbnail{
+        width: 100%;
+        z-index: -1;
+    }
+    
+    /*--------- PROFILE AND RECENT PROJECTS ---------*/
+    
+    .container .profile{
+        grid-column: 1 / -1;
+        
+    }
+    
+    .container .recent_projects{
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+    
+    /*-------- PROJECT DRILLDOWN ----------*/
+    
+    .project_drilldown{
+        grid-column: 1 / -1;
+        
+    }
+    
+    .comments{
+        grid-column: 1 / -1;
+    }
+    
+    /*--------- LOGIN ---------*/
+    
+    .form_container{
+        grid-column: 1 / -1;
+    }
+}
